@@ -1,16 +1,9 @@
 openapi: "3.0.0"
 info:
   version: 1.0.0
-  title: Swagger Petstore
+  title: Imbricae Stack API
   license:
     name: MIT
-  description: |
-    ## Petstore API
-
-    | Syntax | Description |
-    | ----------- | ----------- |
-    | Header | Title |
-    | Paragraph | Text |
 
 paths:
   /pets:
