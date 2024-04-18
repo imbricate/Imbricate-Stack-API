@@ -1,16 +1,36 @@
-summary: Detail
-operationId: showPetById
-description: Info for a specific pet
+summary: Get conetent of a page
+operationId: getPageContent
+description: Get the content of a page
 tags:
-  - pets
+  - pages
 parameters:
-  - $ref: "../parameters/path/petId.yaml"
+  - name: collection-name
+    in: path
+    description: The name of the collection
+    required: true
+    schema:
+      type: string
+  - name: page-identifier
+    in: path
+    description: The identifier of the page
+    required: true
+    schema:
+      type: string
 responses:
   "200":
     description: Expected response to a valid request
     content:
       application/json:
         schema:
-          $ref: "../schemas/Pet.yaml"
+          type: object
+          required:
+            - content
+          properties:
+            content:
+              type: string
   default:
-    $ref: "../responses/UnexpectedError.yaml"
+    description: unexpected error
+    content:
+      application/json:
+        schema:
+          $ref: "/schemas/error.yaml"
