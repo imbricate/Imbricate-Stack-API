@@ -1,0 +1,30 @@
+summary: Get script of a script
+operationId: getScriptScript
+description: Get script of a script
+tags:
+  - script
+parameters:
+  - name: script-identifier
+    in: path
+    description: The identifier of the script
+    required: true
+    schema:
+      type: string
+responses:
+  "200":
+    description: Expected response to a valid request
+    content:
+      application/json:
+        schema:
+          type: object
+          required:
+            - script
+          properties:
+            script:
+              type: string
+  default:
+    description: unexpected error
+    content:
+      application/json:
+        schema:
+          $ref: "/schemas/error.yaml"
