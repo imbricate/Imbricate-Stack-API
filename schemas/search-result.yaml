@@ -1,0 +1,36 @@
+type: object
+required:
+  - type
+  - identifier
+  - headline
+  - snippets
+properties:
+  type:
+    type: string
+  identifier:
+    type: string
+  headline:
+    type: string
+  snippets:
+    type: array
+    items:
+      type: object
+      required:
+        - source
+        - snippet
+        - highlight
+      properties:
+        source:
+          type: string
+        snippet:
+          type: string
+        highlight:
+          type: object
+          required:
+            - start
+            - length
+          properties:
+            start:
+              type: integer
+            length:
+              type: integer

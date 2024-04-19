@@ -17,9 +17,18 @@ paths:
   /collection/{collection-name}/page/{page-identifier}/metadata:
     get:
       $ref: "./paths/collection/{collection-name}/page/{page-identifier}/metadata/get.yaml"
-  /collection/{collection-name}/page/create:
+  /collection/{collection-name}/page/{page-identifier}/retitle:
     post:
-      $ref: "./paths/collection/{collection-name}/page/create/post.yaml"
+      $ref: "./paths/collection/{collection-name}/page/{page-identifier}/retitle/post.yaml"
+  /collection/{collection-name}/pages/create:
+    post:
+      $ref: "./paths/collection/{collection-name}/pages/create/post.yaml"
+  /collection/{collection-name}/pages/query:
+    post:
+      $ref: "./paths/collection/{collection-name}/pages/query/post.yaml"
+  /collection/{collection-name}/pages/search:
+    post:
+      $ref: "./paths/collection/{collection-name}/pages/search/post.yaml"
   /collections:
     get:
       $ref: "./paths/collections/get.yaml"

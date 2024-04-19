@@ -1,0 +1,8 @@
+type: object
+properties:
+  before:
+    type: integer
+    format: date-time
+  after:
+    type: integer
+    format: date-time
