@@ -1,0 +1,41 @@
+summary: Put metadata and content of a page
+operationId: putPage
+description: Put the metadata and content of a page
+tags:
+  - page
+parameters:
+  - name: collection-name
+    in: path
+    description: The name of the collection
+    required: true
+    schema:
+      type: string
+  - name: page-identifier
+    in: path
+    description: The identifier of the page
+    required: true
+    schema:
+      type: string
+requestBody:
+  required: true
+  content:
+    application/json:
+      schema:
+        type: object
+        required:
+          - metadata
+          - content
+        properties:
+          metadata:
+            $ref: "/schemas/page-metadata.yaml"
+          content:
+            type: string
+responses:
+  "204":
+    description: Expected response to a valid request
+  default:
+    description: unexpected error
+    content:
+      application/json:
+        schema:
+          $ref: "/schemas/error.yaml"

@@ -6,12 +6,20 @@ info:
     name: MIT
 
 paths:
+  /collection/{collection-name}/page/{page-identifier}:
+    delete:
+      $ref: "./paths/collection/{collection-name}/page/{page-identifier}/delete.yaml"
+    put:
+      $ref: "./paths/collection/{collection-name}/page/{page-identifier}/put.yaml"
   /collection/{collection-name}/page/{page-identifier}/content:
     get:
       $ref: "./paths/collection/{collection-name}/page/{page-identifier}/content/get.yaml"
   /collection/{collection-name}/page/{page-identifier}/metadata:
     get:
       $ref: "./paths/collection/{collection-name}/page/{page-identifier}/metadata/get.yaml"
+  /collection/{collection-name}/page/create:
+    post:
+      $ref: "./paths/collection/{collection-name}/page/create/post.yaml"
   /collections:
     get:
       $ref: "./paths/collections/get.yaml"
