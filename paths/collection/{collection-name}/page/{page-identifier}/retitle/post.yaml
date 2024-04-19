@@ -1,0 +1,38 @@
+summary: Retitle a page
+operationId: retitlePage
+description: Retitle a page
+tags:
+  - page
+parameters:
+  - name: collection-name
+    in: path
+    description: The name of the collection
+    required: true
+    schema:
+      type: string
+  - name: page-identifier
+    in: path
+    description: The identifier of the page
+    required: true
+    schema:
+      type: string
+requestBody:
+  required: true
+  content:
+    application/json:
+      schema:
+        type: object
+        required:
+          - title
+        properties:
+          title:
+            type: string
+responses:
+  "204":
+    description: Expected response to a valid request
+  default:
+    description: unexpected error
+    content:
+      application/json:
+        schema:
+          $ref: "/schemas/error.yaml"

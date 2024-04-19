@@ -1,0 +1,62 @@
+summary: Query pages within a collection
+operationId: queryPages
+description: Query pages within a collection
+tags:
+  - page
+parameters:
+  - name: collection-name
+    in: path
+    description: The name of the collection
+    required: true
+    schema:
+      type: string
+requestBody:
+  required: true
+  content:
+    application/json:
+      schema:
+        type: object
+        required:
+          - query
+          - config
+        properties:
+          query:
+            type: object
+            properties:
+              title:
+                $ref: "/schemas/query/string.yaml"
+              attributes:
+                type: object
+                additionalProperties:
+                  $ref: "/schemas/query/string.yaml"
+              updatedAt:
+                $ref: "/schemas/query/time.yaml"
+              createdAt:
+                $ref: "/schemas/query/time.yaml"
+          config:
+            type: object
+            properties:
+              limit:
+                type: integer
+              skip:
+                type: integer
+responses:
+  "200":
+    description: Expected response to a valid request
+    content:
+      application/json:
+        schema:
+          type: object
+          required:
+            - searchResults
+          properties:
+            searchResults:
+              type: array
+              items:
+                $ref: "/schemas/search-result.yaml"
+  default:
+    description: unexpected error
+    content:
+      application/json:
+        schema:
+          $ref: "/schemas/error.yaml"
