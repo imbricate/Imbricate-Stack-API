@@ -35,6 +35,12 @@ paths:
   /scripts/create:
     post:
       $ref: "./paths/scripts/create/post.yaml"
+  /scripts/query:
+    post:
+      $ref: "./paths/scripts/query/post.yaml"
+  /scripts/search:
+    post:
+      $ref: "./paths/scripts/search/post.yaml"
 components:
   schemas:
     Collection:

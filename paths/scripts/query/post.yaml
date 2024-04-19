@@ -1,0 +1,55 @@
+summary: Query scripts
+operationId: queryPages
+description: Query scripts
+tags:
+  - script
+requestBody:
+  required: true
+  content:
+    application/json:
+      schema:
+        type: object
+        required:
+          - query
+          - config
+        properties:
+          query:
+            type: object
+            properties:
+              scriptName:
+                $ref: "/schemas/query/string.yaml"
+              attributes:
+                type: object
+                additionalProperties:
+                  $ref: "/schemas/query/string.yaml"
+              updatedAt:
+                $ref: "/schemas/query/time.yaml"
+              createdAt:
+                $ref: "/schemas/query/time.yaml"
+          config:
+            type: object
+            properties:
+              limit:
+                type: integer
+              skip:
+                type: integer
+responses:
+  "200":
+    description: Expected response to a valid request
+    content:
+      application/json:
+        schema:
+          type: object
+          required:
+            - queryResults
+          properties:
+            queryResults:
+              type: array
+              items:
+                $ref: "/schemas/script-metadata.yaml"
+  default:
+    description: unexpected error
+    content:
+      application/json:
+        schema:
+          $ref: "/schemas/error.yaml"

@@ -1,0 +1,42 @@
+summary: Search for scripts
+operationId: searchScripts
+description: Search for scripts
+tags:
+  - script
+requestBody:
+  required: true
+  content:
+    application/json:
+      schema:
+        type: object
+        required:
+          - keyword
+          - config
+        properties:
+          keyword:
+            type: string
+          config:
+            type: object
+            properties:
+              exact:
+                type: boolean
+responses:
+  "200":
+    description: Expected response to a valid request
+    content:
+      application/json:
+        schema:
+          type: object
+          required:
+            - searchResults
+          properties:
+            searchResults:
+              type: array
+              items:
+                $ref: "/schemas/search-result.yaml"
+  default:
+    description: unexpected error
+    content:
+      application/json:
+        schema:
+          $ref: "/schemas/error.yaml"
