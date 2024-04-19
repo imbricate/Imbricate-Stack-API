@@ -25,8 +25,20 @@ requestBody:
           content:
             type: string
 responses:
-  "204":
+  "200":
     description: Expected response to a valid request
+    content:
+      application/json:
+        schema:
+          type: object
+          required:
+            - title
+            - identifier
+          properties:
+            title:
+              type: string
+            identifier:
+              type: string
   default:
     description: unexpected error
     content:

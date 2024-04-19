@@ -18,8 +18,20 @@ requestBody:
           content:
             type: string
 responses:
-  "204":
+  "200":
     description: Expected response to a valid request
+    content:
+      application/json:
+        schema:
+          type: object
+          required:
+            - scriptName
+            - identifier
+          properties:
+            scriptName:
+              type: string
+            identifier:
+              type: string
   default:
     description: unexpected error
     content:
