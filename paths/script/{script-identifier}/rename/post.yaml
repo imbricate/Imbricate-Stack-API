@@ -1,0 +1,32 @@
+summary: Rename a script
+operationId: renameScript
+description: Rename a script
+tags:
+  - script
+parameters:
+  - name: script-identifier
+    in: path
+    description: The identifier of the script
+    required: true
+    schema:
+      type: string
+requestBody:
+  required: true
+  content:
+    application/json:
+      schema:
+        type: object
+        required:
+          - scriptName
+        properties:
+          scriptName:
+            type: string
+responses:
+  "204":
+    description: Expected response to a valid request
+  default:
+    description: unexpected error
+    content:
+      application/json:
+        schema:
+          $ref: "/schemas/error.yaml"

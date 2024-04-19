@@ -1,18 +1,12 @@
-summary: Get metadata of a page
-operationId: getPageMetadata
-description: Get the metadata of a page
+summary: Get metadata of a script
+operationId: getScriptMetadata
+description: Get the metadata of a script
 tags:
-  - page
+  - script
 parameters:
-  - name: collection-name
+  - name: script-identifier
     in: path
-    description: The name of the collection
-    required: true
-    schema:
-      type: string
-  - name: page-identifier
-    in: path
-    description: The identifier of the page
+    description: The identifier of the script
     required: true
     schema:
       type: string
@@ -27,7 +21,7 @@ responses:
             - metadata
           properties:
             metadata:
-              $ref: "/schemas/page-metadata.yaml"
+              $ref: "/schemas/script-metadata.yaml"
   default:
     description: unexpected error
     content:

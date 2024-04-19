@@ -32,6 +32,12 @@ paths:
   /collections:
     get:
       $ref: "./paths/collections/get.yaml"
+  /script/{script-identifier}/metadata:
+    get:
+      $ref: "./paths/script/{script-identifier}/metadata/get.yaml"
+  /script/{script-identifier}/rename:
+    post:
+      $ref: "./paths/script/{script-identifier}/rename/post.yaml"
   /script/{script-identifier}/script:
     get:
       $ref: "./paths/script/{script-identifier}/script/get.yaml"
