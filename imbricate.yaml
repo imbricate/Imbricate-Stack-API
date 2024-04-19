@@ -32,6 +32,9 @@ paths:
   /collections:
     get:
       $ref: "./paths/collections/get.yaml"
+  /scripts/create:
+    post:
+      $ref: "./paths/scripts/create/post.yaml"
 components:
   schemas:
     Collection:

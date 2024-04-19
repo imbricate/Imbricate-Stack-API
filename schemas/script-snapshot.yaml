@@ -1,0 +1,9 @@
+type: object
+required:
+  - scriptName
+  - identifier
+properties:
+  scriptName:
+    type: string
+  identifier:
+    type: string

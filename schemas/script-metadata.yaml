@@ -1,0 +1,17 @@
+type: object
+required:
+  - scriptName
+  - identifier
+properties:
+  scriptName:
+    type: string
+  identifier:
+    type: string
+  description:
+    type: string
+  createdAt:
+    type: integer
+    format: date-time
+  updatedAt:
+    type: integer
+    format: date-time

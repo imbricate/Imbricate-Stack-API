@@ -1,0 +1,28 @@
+summary: Create a script
+operationId: createScript
+description: Create a script
+tags:
+  - script
+requestBody:
+  required: true
+  content:
+    application/json:
+      schema:
+        type: object
+        required:
+          - metadata
+          - content
+        properties:
+          metadata:
+            $ref: "/schemas/script-metadata.yaml"
+          content:
+            type: string
+responses:
+  "204":
+    description: Expected response to a valid request
+  default:
+    description: unexpected error
+    content:
+      application/json:
+        schema:
+          $ref: "/schemas/error.yaml"
