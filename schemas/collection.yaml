@@ -1,0 +1,8 @@
+type: object
+required:
+  - collectionName
+properties:
+  collectionName:
+    type: string
+  description:
+    type: string

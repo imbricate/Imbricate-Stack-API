@@ -1,6 +1,6 @@
-summary: Get conetent of a page
-operationId: getPageContent
-description: Get the content of a page
+summary: Get metadata of a page
+operationId: getPageMetadata
+description: Get the metadata of a page
 tags:
   - page
 parameters:
@@ -26,8 +26,8 @@ responses:
           required:
             - content
           properties:
-            content:
-              type: string
+            metadata:
+              $ref: "/schemas/page-metadata.yaml"
   default:
     description: unexpected error
     content:

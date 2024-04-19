@@ -1,0 +1,25 @@
+summary: Get a list of collections
+operationId: getCollections
+description: Get a list of collections
+tags:
+  - collection
+responses:
+  "200":
+    description: Expected response to a valid request
+    content:
+      application/json:
+        schema:
+          type: object
+          required:
+            - collections
+          properties:
+            collections:
+              type: array
+              items:
+                $ref: "/schemas/collection.yaml"
+  default:
+    description: unexpected error
+    content:
+      application/json:
+        schema:
+          $ref: "/schemas/error.yaml"

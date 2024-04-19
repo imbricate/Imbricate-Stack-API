@@ -9,13 +9,19 @@ paths:
   /collection/{collection-name}/page/{page-identifier}/content:
     get:
       $ref: "./paths/collection/{collection-name}/page/{page-identifier}/content/get.yaml"
+  /collection/{collection-name}/page/{page-identifier}/metadata:
+    get:
+      $ref: "./paths/collection/{collection-name}/page/{page-identifier}/metadata/get.yaml"
+  /collections:
+    get:
+      $ref: "./paths/collections/get.yaml"
 components:
   schemas:
-    Page:
-      $ref: "./schemas/page.yaml"
-    Pages:
-      type: array
-      items:
-        $ref: "#/components/schemas/Page"
+    Collection:
+      $ref: "./schemas/collection.yaml"
+    Page-Snapshot:
+      $ref: "./schemas/page-snapshot.yaml"
+    Page-Metadata:
+      $ref: "./schemas/page-metadata.yaml"
     Error:
       $ref: "./schemas/error.yaml"
