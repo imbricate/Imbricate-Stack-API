@@ -1,0 +1,24 @@
+title: Imbricate-Stack-API
+application_name: Imbricate-Stack-API
+email: info@imbricate.io
+description: Imbricate
+url: https://stack-api.imbricate.io
+github_username: Imbricate
+theme: minima
+repository: imbricate/Imbricate-Stack-API
+markdown: kramdown
+kramdown:
+  input: GFM
+  syntax_highlighter: rouge
+author:
+  name: WMXPY
+  email: wm@mengw.io
+plugins:
+  - jekyll-github-metadata
+exclude:
+  - .jekyll-cache/
+  - docs/
+  - gemfiles/
+  - Gemfile
+  - Gemfile.lock
+  - makefile
