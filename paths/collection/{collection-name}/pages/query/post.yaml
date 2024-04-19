@@ -48,12 +48,12 @@ responses:
         schema:
           type: object
           required:
-            - searchResults
+            - queryResults
           properties:
-            searchResults:
+            queryResults:
               type: array
               items:
-                $ref: "/schemas/search-result.yaml"
+                $ref: "/schemas/page-metadata.yaml"
   default:
     description: unexpected error
     content:
